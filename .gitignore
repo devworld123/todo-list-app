@@ -7,6 +7,8 @@
 *.class
 *.jar
 *.war
+*.classpath
+*.project
 
 # Ignore generated files and directories
 target/
@@ -25,4 +27,5 @@ config.properties
 # Ignore entire folders
 logs/
 temp/
-settings/
+.settings/
+bin/
