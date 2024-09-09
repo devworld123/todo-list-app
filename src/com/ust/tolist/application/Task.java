@@ -14,6 +14,7 @@ public class Task {
 		this.priority = priority;
 	}
 
+
 	public String getDescription() {
         return description;
     }
@@ -33,6 +34,7 @@ public class Task {
         return priority;
     }
 
+
     public void setPriority(int priority) {
         this.priority = priority;
     }
@@ -41,5 +43,6 @@ public class Task {
 	public String toString() {
 		return "Task [description=" + description + ", dueDate=" + dueDate + ", priority=" + priority + "]";
 	}
+
 
 }
