@@ -25,3 +25,4 @@ config.properties
 # Ignore entire folders
 logs/
 temp/
+settings/
