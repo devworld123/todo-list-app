@@ -35,15 +35,51 @@ public class ToDoListApplication {
 
 	    }
 	}
+	public void displayTasks() {
+        if (taskCount == 0) {
+            System.out.println("No tasks available.");
+        } else {
+            for (int i = 0; i < taskCount; i++) {
+                System.out.println((i + 1) + ". " + tasks[i]);
+            }
+        }
+    }
 
 	public static void main(String[] args) {
 		ToDoListApplication toDoList = new ToDoListApplication(10);
 		Scanner scanner = new Scanner(System.in);
 		boolean exit = false;
 		
-		toDoList.addTask("Complete project", "2024-09-10", 1);
+		while (!exit) {
+            System.out.println("\n1. Add Task\n2. Remove Task\n3. Display Tasks\n4. Exit");
+            int choice = scanner.nextInt();
+            scanner.nextLine();  // Consume newline
 
-		toDoList.removeTask(0);
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter task description:");
+                    String description = scanner.nextLine();
+                    System.out.println("Enter due date (yyyy-mm-dd):");
+                    String dueDate = scanner.nextLine();
+                    toDoList.addTask(description, dueDate,1);
+                    break;
+                case 2:
+                    System.out.println("Enter task number to remove:");
+                    int index = scanner.nextInt() - 1;
+                    toDoList.removeTask(index);
+                    break;
+                case 3:
+                    toDoList.displayTasks();
+                    break;
+                case 4:
+                    exit = true;
+                    System.out.println("Successfully logged out.");
+                    break;
+                default:
+                    System.out.println("Invalid option.");
+            }
+        }
+        scanner.close();
 
 	}
 
